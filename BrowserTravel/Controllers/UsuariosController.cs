@@ -24,6 +24,12 @@ namespace BrowserTravel.Controllers
             return View();  
         }
 
+
+        /// <summary>
+        /// Registra un nuevo usuario
+        /// </summary>
+        /// <param name="modelo"></param>
+        /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Registro(RegistroViewModel modelo)
@@ -60,6 +66,11 @@ namespace BrowserTravel.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Loguea un usuario para acceso a la apliación
+        /// </summary>
+        /// <param name="modelo"></param>
+        /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel modelo)
@@ -84,6 +95,10 @@ namespace BrowserTravel.Controllers
 
         }
 
+        /// <summary>
+        /// Usuario sale de la aplicación
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Logout()
         {

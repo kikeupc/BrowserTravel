@@ -18,6 +18,11 @@ namespace BrowserTravel.Servicios
             connectionString = configuration.GetConnectionString("DefaultConnection");
         }
 
+        /// <summary>
+        /// Envía datos de un nuevo usuario a la base de datos para su creación
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         public async Task<int> CrearUsuario(Usuario usuario)
         {
             using var connection = new SqlConnection(connectionString);

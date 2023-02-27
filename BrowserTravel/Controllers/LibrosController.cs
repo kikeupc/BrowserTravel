@@ -17,6 +17,10 @@ namespace BrowserTravel.Controllers
             this.bdtravelContext = bdtravelContext;
         }   
 
+        /// <summary>
+        /// Obtiene un listado de libros
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Index() 
         {
 
@@ -36,6 +40,11 @@ namespace BrowserTravel.Controllers
             return View(modelo);  
         }
 
+        /// <summary>
+        /// Consulta libro por isbn para obtener detalle de este
+        /// </summary>
+        /// <param name="isbn"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Detalle(int isbn)
         {
 
