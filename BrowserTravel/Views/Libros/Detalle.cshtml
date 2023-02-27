@@ -1,0 +1,52 @@
+﻿@model LibroViewModel
+@{
+    ViewData["Title"] = "Detalle del Libro";
+}
+
+<h1>@Model.Titulo</h1>
+<h5>@Model.Sinopsis</h5>
+
+
+<div class="row mt-4">
+    <table>
+        <tr>
+            <td>
+                <strong>Editorial:</strong> <label class="form-label">@Model.Editoriales.Nombre</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Sede Editorial :</strong> <label class="form-label">@Model.Editoriales.Sede</label>
+            </td>
+        </tr>
+    </table>       
+</div>
+
+<div class="mt-4">
+    <h3>Autor(es):</h3>
+</div>
+
+
+<div class="row mt-6">
+    <table class="table" style="width:30%">
+        <thead>
+            <tr>
+                <th>Autor</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var autor in Model.Autores)
+            {
+                <tr>
+                    <td>
+                        @autor.Nombre @autor.Apellidos
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="mb-4">
+    <a class="btn btn-secondary" asp-action="index">Volver</a>
+</div>

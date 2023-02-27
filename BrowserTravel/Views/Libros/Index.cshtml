@@ -1,0 +1,38 @@
+﻿@model ListadoLibrosViewModel
+
+@{
+    ViewData["Title"] = "Libros";
+}
+
+
+<h1>Libros</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Acción</th>
+            <th>ISBN</th>
+            <th>Titulo</th>
+            <th>No. Páginas</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var libro in Model.Libros)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Detalle" asp-route-isbn="@libro.Isbn">Detalle</a>
+                </td>
+                <td>
+                    @libro.Isbn
+                </td>
+                <td>
+                    @libro.Titulo
+                </td>
+                <td>
+                    @libro.NPaginas
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
